@@ -7,18 +7,28 @@
   "terminal.integrated.fontSize": 19,
   "emmet.showAbbreviationSuggestions": true,
   "emmet.showExpandedAbbreviation": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "emmet.includeLanguages": {
-        "vue-html": "html",
-        "vue": "html",
-        "javascript" : "javascriptreact" 
+    "vue-html": "html",
+    "vue": "html",
+    "javascript": "javascriptreact"
   },
   "emmet.syntaxProfiles": {
     "javascript": "jsx",
     "xml": {
-        "attr_quotes": "single"
+      "attr_quotes": "single"
     }
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
+  },
   "editor.tabSize": 2,
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "typescript.tsdk": "./node_modules/typescript/lib",
@@ -26,13 +36,19 @@
   "files.eol": "\n",
   "editor.multiCursorModifier": "ctrlCmd",
   "explorer.confirmDragAndDrop": false,
-  "files.autoSaveDelay": 10000,
-  "eslint.validate": [ "javascript", "javascriptreact", "html", "typescript", "typescriptreact" ],
+  "files.autoSaveDelay": 60000,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescript",
+    "typescriptreact"
+  ],
   "typescript.validate.enable": true,
   "javascript.validate.enable": true,
   "files.exclude": {
     "**/*.js": { "when": "$(basename).ts" },
-   "**/**.js": { "when": "$(basename).tsx" },
-  "**/**.jsx": { "when": "$(basename).tsx" }
+    "**/**.js": { "when": "$(basename).tsx" },
+    "**/**.jsx": { "when": "$(basename).tsx" }
   }
 }

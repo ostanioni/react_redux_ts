@@ -14,9 +14,10 @@ module.exports = {
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  plugins: ["@typescript-eslint", "react-redux"],
+  plugins: ["@typescript-eslint", "react-redux", "prettier"],
   extends: [
     "eslint:recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:react-redux/recommended",
     "plugin:@typescript-eslint/recommended",
