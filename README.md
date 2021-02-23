@@ -52,13 +52,13 @@ Serve production version of the application
 Type representing a functional component
 
 ```js
-interface Props {
-    Title: string;
-    Image: string;
-    Body: string;
+type Props = {
+    Name: string;
+     Age: number;
+   Color: string;
 }
 const FunctionalComponent: React.FC<Props> =
-    ({Title,Image,Body})=>{
+    ({Name,Age,Color})=>{
     ...
         return (
             ...
