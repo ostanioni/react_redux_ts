@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "charset": "utf8",
+    "locale": "ru",
+    "strict": true,
+    "pretty": true,
+    "removeComments": true,
+    "newLine": "LF",
+    "lib": [
+      "dom",
+      "scripthost",
+      "webworker",
+      "esnext"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "components": [
+        "/components"
+      ],
+      "themes": [
+        "/themes"
+      ],
+      "styles": [
+        "/styles"
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "name": "typescript-styled-plugin",
+      "tags": [
+        "styled",
+        "css",
+        "injectGlobal",
+        "createGlobalStyle",
+        "keyframes"
+      ]
+    }
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "dist"
+  ]
+}
