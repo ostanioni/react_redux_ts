@@ -1,16 +1,18 @@
 # Typescript React+Redux+StyledComponents playground
 
-+ React 17.01
-+ React-router 5.0
-+ Redux
-+ Styled-components 5.2
+- React 17.01
+- React-router 5.2.0
+- Redux 4.0.5
+- Styled-components 5.2.1
 
 # Available Scripts:
+
 ## Installation
+
 ### `npm install`
 
-
 ## Compiles and hot-reloads for development
+
 ### `npm run dev`
 
 Runs the app in the development mode.<br>
@@ -20,6 +22,7 @@ The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ## Compiles and minifies for production
+
 ### `npm run build`
 
 Builds the app for production to the `dist` folder.<br>
@@ -28,25 +31,33 @@ It correctly bundles App in production mode and optimizes the build for the best
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-## Project serve from  `./dist` folder after 'build'
-### `npm run serve`
-Serve production version of the application 
+## Project serve from `./dist` folder after 'build'
 
-## Project serve from  `./dist` folder after 'build'
+### `npm run serve`
+
+Serve production version of the application
+
+## Project serve from `./dist` folder after 'build'
+
 ### `npm run test`
-Serve production version of the application 
+
+Serve production version of the application
 
 # Определение типов в React
+
 ### "Function Component"
+
 ##### React.FC<Props> | React.FunctionComponent<Props>
+
 Type representing a functional component
+
 ```js
 interface Props {
     Title: string;
     Image: string;
     Body: string;
 }
-const FunctionalComponent: React.FC<Props> = 
+const FunctionalComponent: React.FC<Props> =
     ({Title,Image,Body})=>{
     ...
         return (
@@ -54,23 +65,26 @@ const FunctionalComponent: React.FC<Props> =
         )
     }
 ```
+
 ### FC Typing Pattern
+
 `Counter.tsx`
+
 ```js
-import * as React from 'react';
+import * as React from 'react'
 
 type Props = {
-  label: string;
-  count: number;
-  onIncrement: () => void;
-};
+  label: string,
+  count: number,
+  onIncrement: () => void
+}
 
-export const FCCounter: React.FC<Props> = props => {
-  const { label, count, onIncrement } = props;
+export const FCCounter: React.FC<Props> = (props) => {
+  const { label, count, onIncrement } = props
 
   const handleIncrement = () => {
-    onIncrement();
-  };
+    onIncrement()
+  }
 
   return (
     <div>
@@ -81,26 +95,29 @@ export const FCCounter: React.FC<Props> = props => {
         {`Increment`}
       </button>
     </div>
-  );
-};
+  )
+}
 ```
-### Spread attributes 
+
+### Spread attributes
+
 ```js
-import * as React from 'react';
+import * as React from 'react'
 
 type Props = {
-  className?: string;
-  style?: React.CSSProperties;
-};
+  className?: string,
+  style?: React.CSSProperties
+}
 
-export const FCSpreadAttributes: React.FC<Props> = props => {
-  const { children, ...restProps } = props;
+export const FCSpreadAttributes: React.FC<Props> = (props) => {
+  const { children, ...restProps } = props
 
-  return <div {...restProps}>{children}</div>;
-};
+  return <div {...restProps}>{children}</div>
+}
 ```
 
 ##### Interface FunctionComponent
+
 ```js
 interface FunctionComponent<P = {}> {
   (props: P & { children?: ReactNode }, context?: any): ReactElement | null;
@@ -110,12 +127,15 @@ interface FunctionComponent<P = {}> {
   displayName?: string;
 }
 ```
+
 `The React team is discussing removing defaultProps from function components. It adds unnecessary complexity because default function arguments work equally as well without needing to introduce a new concept beyond standard JavaScript.`
+
 ##### React.Component<Props, State>
+
 Type representing a class component
 
 ```js
-class ClassComponent extends React.Component<Props, State> { 
+class ClassComponent extends React.Component<Props, State> {
   ...
   render(){
     ...
@@ -125,8 +145,11 @@ class ClassComponent extends React.Component<Props, State> {
   }
 }
 ```
+
 #### Typings Pattern
+
 `Counter.tsx`
+
 ```js
 import * as React from 'react';
 
@@ -165,7 +188,9 @@ export class ClassCounter extends React.Component<Props, State> {
   }
 }
 ```
+
 with default props
+
 ```js
 import * as React from 'react';
 
@@ -218,9 +243,11 @@ export class ClassCounterWithDefaultProps extends React.Component<
   }
 }
 ```
+
 ### Generic Component
+
 ```js
-import * as React from 'react';
+import * as React from 'react'
 
 export interface GenericListProps<T> {
   items: T[];
@@ -229,19 +256,19 @@ export interface GenericListProps<T> {
 
 export class GenericList<T> extends React.Component<GenericListProps<T>, {}> {
   render() {
-    const { items, itemRenderer } = this.props;
+    const { items, itemRenderer } = this.props
 
-    return (
-      <div>
-        {items.map(itemRenderer)}
-      </div>
-    );
+    return <div>{items.map(itemRenderer)}</div>
   }
 }
 ```
+
 ### Render Props
+
 #### Name propvider
+
 simple component using children as a render prop
+
 ```js
 import * as React from 'react';
 
@@ -261,7 +288,9 @@ export class NameProvider extends React.Component<NameProviderProps, NameProvide
   }
 }
 ```
+
 ##### Mouse Provider
+
 ```js
 import * as React from 'react';
 
@@ -297,9 +326,13 @@ export class MouseProvider extends React.Component<MouseProviderProps, MouseProv
   }
 }
 ```
+
 ### Higher-Order Components
+
 #### withState
+
 Adds state to a stateless counter
+
 ```js
 import * as React from 'react';
 import { Subtract } from 'utility-types';
@@ -353,8 +386,11 @@ export const withState = <BaseProps extends InjectedProps>(
   };
 };
 ```
+
 #### withErrorBoundary
+
 Adds error handling using componentDidCatch to any component
+
 ```js
 import * as React from 'react';
 import { Subtract } from 'utility-types';
@@ -422,48 +458,71 @@ export const withErrorBoundary = <BaseProps extends InjectedProps>(
 ```
 
 ##### React.ComponentType<Props>
+
 Type representing union of (React.FC | React.Component) - used in HOC
+
 ```js
 const withState = <P extends WrappedComponentProps>(
   WrappedComponent: React.ComponentType<P>,
 ) => { ... }
 ```
+
 ##### React.ComponentProps<typeof XXX>
+
 Gets Props type of a specified component XXX (WARNING: does not work with statically declared default props and generic props)
+
 ```js
-type MyComponentProps = React.ComponentProps<typeof MyComponent>;
+type MyComponentProps = React.ComponentProps<typeof MyComponent>
 ```
+
 #### React.ReactElement | JSX.Element
+
 Type representing a concept of React Element - representation of a native DOM component (e.g. <div />), or a user-defined composite component (e.g. <MyComponent />)
+
 ```js
-const elementOnly: React.ReactElement = <div /> || <MyComponent />;
+const elementOnly: React.ReactElement = <div /> || <MyComponent />
 ```
+
 #### React.ReactNode
+
 Type representing any possible type of React node (basically ReactElement (including Fragments and Portals) + primitive JS types)
+
 ```js
 const elementOrPrimitive: React.ReactNode = 'string' || 0 || false || null || undefined || <div /> || <MyComponent />;
 const Component = ({ children: React.ReactNode }) => ...
 ```
+
 #### React.CSSProperties
+
 Type representing style object in JSX - for css-in-js styles
+
 ```js
 const styles: React.CSSProperties = { flexDirection: 'row', ...
 const element = <div style={styles} ...
 ```
+
 #### React.HTMLProps<HTMLXXXElement>
+
 Type representing Props of specified HTML Element - for extending HTML Elements
+
 ```js
 Type representing Props of specified HTML Element - for extending HTML Elements
 ```
+
 #### React.ReactEventHandler<HTMLXXXElement>
+
 Type representing generic event handler - for declaring event handlers
+
 ```js
-const handleChange: React.ReactEventHandler<HTMLInputElement> = (ev) => { ... } 
+const handleChange: React.ReactEventHandler<HTMLInputElement> = (ev) => { ... }
 
 <input onChange={handleChange} ... />
 ```
+
 #### React.XXXEvent<HTMLXXXElement>
+
 Type representing more specific event handler. Some common event examples: `ChangeEvent, FormEvent, FocusEvent, KeyboardEvent, MouseEvent, DragEvent, PointerEvent, WheelEvent, TouchEvent.`
+
 ```js
 const handleChange = (ev: React.MouseEvent<HTMLDivElement>) => { ... }
 
@@ -471,38 +530,54 @@ const handleChange = (ev: React.MouseEvent<HTMLDivElement>) => { ... }
 ```
 
 ## React Hooks
+
 #### useState with TypeScript
+
 ```js
 interface IUser {
   username: string;
-  email:  string;
+  email: string;
   password: string;
 }
 
 const ComplexState = ({ initialUserData }) => {
-  const [user, setUser] = React.useState<IUser | null>(initialUserDate);
-  
+  const [user, setUser] = (React.useState < IUser) | (null > initialUserDate)
+
   if (!user) {
     // do something else when our user is null
   }
 
   return (
     <form>
-      <input value={user.username} onChange={e => setUser({...user, username: e.target.value})} />
-      <input value={user.email} onChange={e => setUser({...user, email: e.target.value})} />
-      <input value={user.password} onChange={e => setUser({...user, password: e.target.value})} />
-    </form>  
-  );
+      <input
+        value={user.username}
+        onChange={(e) => setUser({ ...user, username: e.target.value })}
+      />
+      <input
+        value={user.email}
+        onChange={(e) => setUser({ ...user, email: e.target.value })}
+      />
+      <input
+        value={user.password}
+        onChange={(e) => setUser({ ...user, password: e.target.value })}
+      />
+    </form>
+  )
 }
 ```
+
 Official typing useState
+
 ```js
 function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
 type Dispatch<A> = (value: A) => void;
 type SetStateAction<S> = S | ((prevState: S) => S);
 ```
+
 #### useEffect with TypeScript
+
 Official typing useEffect
+
 ```js
 function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 // The first argument, `effect`
@@ -510,7 +585,9 @@ type EffectCallback = () => (void | (() => void | undefined));
 // The second argument, `deps?`
 type DependencyList = ReadonlyArray<any>;
 ```
+
 #### useContext with TypeScript
+
 ```js
 import { createContext, useContext } from 'react';
 props ITheme {
@@ -525,6 +602,7 @@ const ThemeContext = createContext<ITheme>({
 // Accessing context in a child component
 const themeContext = useContext<ITheme>(ThemeContext);
 ```
+
 ```js
 Official typing useContext
 function useContext<T>(context: Context<T>): T;
@@ -537,9 +615,11 @@ interface Context<T> {
 ```
 
 #### useReducer with TypeScript
+
 ```js
-const [state, dispatch] = useReducer(reducer, initialState, init);
+const [state, dispatch] = useReducer(reducer, initialState, init)
 ```
+
 ```js
 import * as React from 'react';
 
@@ -555,7 +635,7 @@ interface IState {
 interface IAction {
   type: ActionType;
   payload: {
-    count: number; 
+    count: number;
   };
 }
 
@@ -584,10 +664,12 @@ const ComplexState = () => {
       <button onClick={
         () => dispatch({type: ActionType.Decrement, payload: { count: 1 }})
       }>-</button>
-    </div>  
+    </div>
   );
 ```
+
 The useReducer function can utilize the following types:
+
 ```js
 type Dispatch<A> = (value: A) => void;
 type Reducer<S, A> = (prevState: S, action: A) => S;
@@ -612,83 +694,100 @@ function useReducer<R extends Reducer<any, any>>(
   initializer?: undefined
 ): [ReducerState<R>, Dispatch<ReducerAction<R>>];
 ```
+
 #### useCallback with TypeScript
+
 ```js
-const memoizedCallback = useCallback(
-  () => {
-    doSomething(a, b);
-  },
-  [a, b],
-);
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b)
+}, [a, b])
 ```
+
 The TypeScript definition of useCallback is the following:
+
 ```js
 function useCallback<T extends (...args: any[]) => any>(callback: T, deps: DependencyList): T;
 ```
+
 #### useMemo with TypeScript
+
 ```js
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 ```
+
 ```js
 const computeExpensiveValue = (end: number) => {
-  let result = 0;
+  let result = 0
 
   for (let i = 0; i < end * 1000000; i++) {
     for (let j = 0; i < end * 1000; j++) {
-       result = result + i - j;
+      result = result + i - j
     }
   }
 
-  return result;
-};
+  return result
+}
 
 const MyComponent = ({ end = 0 }) => {
-  const memoizedNumber = React.useMemo<number>(computeExpensiveValue(end))
-    
-  return (
-    <DisplayResult result={memoizedNumber} />
-  );
+  const memoizedNumber = React.useMemo < number > computeExpensiveValue(end)
+
+  return <DisplayResult result={memoizedNumber} />
 }
 ```
+
 The TypeScript definition of useMemo is the following:
+
 ```js
 function useMemo<T>(factory: () => T, deps: DependencyList): T;
 ```
+
 #### useRef with TypeScript
+
 ```js
-const refContainer = useRef(initialValue);
+const refContainer = useRef(initialValue)
 ```
+
 ```js
 function TextInputWithFocusButton() {
   // The type of our ref is an input element
-  
-  let ref: string | ((instance: HTMLDivElement | null) => void) | React.RefObject<HTMLDivElement> | null | undefined;
-  const inputEl = useRef<HTMLInputElement>(null);
+
+  let ref:
+    | string
+    | ((instance: HTMLDivElement | null) => void)
+    | React.RefObject<HTMLDivElement>
+    | null
+    | undefined
+  const inputEl = useRef < HTMLInputElement > null
   const onButtonClick = () => {
     // `current` points to the mounted text input element
-    inputEl.current.focus();
-  };
+    inputEl.current.focus()
+  }
 
   return (
     <>
       <input ref={inputEl} type="text" />
       <button onClick={onButtonClick}>Focus the input</button>
     </>
-  );
+  )
 }
 ```
+
 The TypeScript definition for useRef is the following:
+
 ```js
 function useRef<T>(initialValue: T): MutableRefObject<T>;
-  
+
 interface MutableRefObject<T> {
   current: T;
 }
 ```
+
 #### useImperativeHandle with TypeScript
+
 ```js
 useImperativeHandle(ref, createHandle, [inputs])
 ```
+
 ```js
 function FancyInput(props, ref) {
   const inputRef = useRef();
@@ -704,34 +803,43 @@ FancyInput = React.forwardRef(FancyInput);
 const fancyInputRef = React.createRef();
 <FancyInput ref={fancyInputRef}>Click me!</FancyInput>;
 ```
+
 The TypeScript definition of useImperativeHandle is the following:
+
 ```js
 function useImperativeHandle<T, R extends T>(ref: Ref<T>|undefined, init: () => R, deps?: DependencyList): void;
 ```
+
 #### useLayoutEffect with TypeScript
+
 ```js
 function useLayoutEffect(effect: EffectCallback, deps?: DependencyList): void;
 ```
+
 #### useDebugValue with TypeScript
+
 ```js
 useDebugValue(value)
 ```
+
 ```js
 function useFriendStatus(friendID) {
-  const [isOnline, setIsOnline] = useState(null);
+  const [isOnline, setIsOnline] = useState(null)
 
   // ...
 
   // Show a label in DevTools next to this Hook
   // e.g. "FriendStatus: Online"
-  useDebugValue(isOnline ? 'Online' : 'Offline');
+  useDebugValue(isOnline ? 'Online' : 'Offline')
 
-  return isOnline;
+  return isOnline
 }
 ```
+
 #### Custom Hooks
+
 ```js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 type Hook = (friendID: number) => boolean
 
@@ -742,22 +850,23 @@ interface IStatus {
 
 const useFriendStatus: Hook = (friendID) => {
   // The type of the value and function are inferred
-  const [isOnline, setIsOnline] = useState<boolean | null>(null);
+  const [isOnline, setIsOnline] = (useState < boolean) | (null > null)
 
   function handleStatusChange(status: IStatus) {
-    setIsOnline(status.isOnline);
+    setIsOnline(status.isOnline)
   }
 
   useEffect(() => {
-    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange)
     return () => {
-      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
-    };
-  });
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange)
+    }
+  })
 
-  return isOnline;
+  return isOnline
 }
 ```
+
 ```js
 import * as React from 'react';
 import useFriendStatus from './useFriendStatus';
@@ -780,7 +889,9 @@ const FriendsListItem ({ user }) => {
   );
 };
 ```
+
 This logic is now able to be extended to any component that needs to know the online status of a user
+
 ```js
 interface FunctionComponent<P = {}> {
   (props: P & { children?: ReactNode }, context?: any): ReactElement | null;
