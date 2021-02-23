@@ -8,30 +8,20 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "charset": "utf8",
     "locale": "ru",
     "strict": true,
     "pretty": true,
     "removeComments": true,
+    "isolatedModules": true,
     "newLine": "LF",
-    "lib": [
-      "dom",
-      "scripthost",
-      "webworker",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "scripthost", "webworker", "esnext"],
     "baseUrl": "./src",
     "paths": {
-      "components": [
-        "/components"
-      ],
-      "themes": [
-        "/themes"
-      ],
-      "styles": [
-        "/styles"
-      ]
+      "components": ["/components"],
+      "themes": ["/themes"],
+      "styles": ["/styles"]
     }
   },
   "plugins": [
@@ -46,12 +36,6 @@
       ]
     }
   ],
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "dist"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "**/*.spec.ts", "dist"]
 }
