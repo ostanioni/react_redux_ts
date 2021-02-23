@@ -4,6 +4,7 @@
 - React-router 5.2.0
 - Redux 4.0.5
 - Styled-components 5.2.1
+- Typescript 4.2.2
 
 # Available Scripts:
 
