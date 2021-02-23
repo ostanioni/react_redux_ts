@@ -32,7 +32,7 @@ module.exports = {
     indent: ['warn', 2],
     'linebreak-style': ['warn', 'unix'],
     quotes: ['warn', 'double'],
-    semi: 'none',
+    // semi: 'none',
     '@typescript-eslint/semicolon': 'warn',
     '@typescript-eslint/trailing-comma': false
   }
