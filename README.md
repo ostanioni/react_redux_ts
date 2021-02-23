@@ -37,11 +37,17 @@ Your app is ready to be deployed!
 
 Serve production version of the application
 
-## Project serve from `./dist` folder after 'build'
+## Removes and reinstalls node modules
+
+### `npm run reinstall`
+
+Removes and reinstalls node modules
+
+## Project test - not available
 
 ### `npm run test`
 
-Serve production version of the application
+Not available
 
 # Определение типов в React
 
