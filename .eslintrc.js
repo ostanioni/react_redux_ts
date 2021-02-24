@@ -20,8 +20,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-redux/recommended',
     "prettier",
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
+    // 'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',    
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/errors',
@@ -52,8 +52,8 @@ module.exports = {
     quotes: ['warn', 'single', { allowTemplateLiterals: true }],
     '@typescript-eslint/quotes': ['warn'],
 
-    // semi: 0,
-    '@typescript-eslint/semicolon': ['warn', 'single'],
+    semi: ["warn", "never", { "beforeStatementContinuationChars": "always"}],
+    '@typescript-eslint/semicolon': ['warn'],
 
     'comma-spacing': ['error', { before: false, after: true }],
     '@typescript-eslint/comma-spacing': ['warn'],

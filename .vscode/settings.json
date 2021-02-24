@@ -32,7 +32,7 @@
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": false,
-  // "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "tslint.enable": false,
