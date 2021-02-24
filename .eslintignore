@@ -7,6 +7,14 @@ node_modules
 docs
 react
 
+#config files
+.babelrc.js
+.eslintrc.js
+package.json
+package-lock.json
+tsconfig.json
+
+
 # local env files
 .env.local
 .env.*.local
