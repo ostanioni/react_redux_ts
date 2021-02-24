@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// import { Provider } from 'react-redux'
+// import store from 'store/Store'
 
 const TitleStyled = styled.h1`
   font-size: 1.5em;
@@ -8,16 +10,16 @@ const TitleStyled = styled.h1`
   color: palevioletred;
 `
 
-let Title = (props) => {
-  return (
-    <TitleStyled> { props.children } </TitleStyled>
-  );
+const Title = () => {
+  return <TitleStyled> Hello World ! </TitleStyled>
 }
 
-let App = ( ) => {
+const App = () => {
   return (
-    <Title> Hello World ! </Title>
-  );
+    // <Provider store={store}>
+    <Title />
+    // </Provider>
+  )
 }
 
 export default App
