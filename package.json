@@ -50,6 +50,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-react-redux": "^3.3.2",
+    "fork-ts-checker-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^5.2.0",
     "http-server": "^0.12.3",
     "prettier": "^2.2.1",
