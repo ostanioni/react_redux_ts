@@ -8,7 +8,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "charset": "utf8",
     "locale": "ru",
     "strict": true,
@@ -17,11 +17,12 @@
     "isolatedModules": true,
     "newLine": "LF",
     "lib": ["dom", "dom.iterable", "scripthost", "webworker", "esnext"],
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "components": ["/components"],
+      "components": ["/src/components"],
       "themes": ["/themes"],
-      "styles": ["/styles"]
+      "styles": ["/src/styles"],
+      "store": ["/src/store"]
     }
   },
   "plugins": [

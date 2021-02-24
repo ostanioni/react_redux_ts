@@ -14,27 +14,25 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module'
   },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'], // Your TypeScript files extension
-      parserOptions: {
-        project: ['./tsconfig.json'] // Specify it only for TypeScript files
-      }
-    }
-  ],
-  plugins: ['@typescript-eslint', 'react-redux', 'prettier'],
+  plugins: ['@typescript-eslint', 'react-redux'],
   extends: [
     'eslint:recommended',
-    'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-redux/recommended',
+    "prettier",
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript'
   ],
   settings: {
     react: {
       version: 'detect'
-    }
+    },
+    'import/resolver': 'webpack'   
   },
   rules: {
     indent: ['warn', 2],
@@ -54,8 +52,8 @@ module.exports = {
     quotes: ['warn', 'single', { allowTemplateLiterals: true }],
     '@typescript-eslint/quotes': ['warn'],
 
-    semi: ['error', 'never', { omitLastInOneLineBlock: true }],
-    '@typescript-eslint/semicolon': ['warn'],
+    // semi: 0,
+    '@typescript-eslint/semicolon': ['warn', 'single'],
 
     'comma-spacing': ['error', { before: false, after: true }],
     '@typescript-eslint/comma-spacing': ['warn'],

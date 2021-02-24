@@ -6,6 +6,7 @@ const webpack = require('webpack')
 
 /*_____________CONTEXT_______________ */
 const CONTEXT = path.resolve(__dirname, '../')
+const SRC = path.resolve(__dirname, '../')
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 /* __________ENTRY__POINT_____________*/
 const $ENTRY = './src/index.ts'
@@ -24,25 +25,25 @@ module.exports = {
     rules: []
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      pages: `${CONTEXT}/src/pages`,
-      layouts: `${CONTEXT}/src/layouts`,
-      components: `${CONTEXT}/src/components`,
-      resources: `${CONTEXT}/src/resources`,
-      tables: `${CONTEXT}/src/tables`,
-      store: `${CONTEXT}/src/stores`,
-      styled: `${CONTEXT}/src/styled`,
-      ts: `${CONTEXT}/src/typescript`,
-      algs: `${CONTEXT}/src/typescript/algorithms`,
-      webgl: `${CONTEXT}/src/webgl`,
-      polyfills: `${CONTEXT}/src/polyfills`,
-      resources: `${CONTEXT}/public/resources`,
-      workers: `${CONTEXT}/public/workers`,
-      css: `${CONTEXT}/public/css`,
-      imgs: `${CONTEXT}/public/imgs`,
-      themes: `${CONTEXT}/src/themes`
+      pages:       `${SRC}/pages`,
+      layouts:     `${SRC}/layouts`,
+      components:  `${SRC}/components`,
+      resources:   `${SRC}/resources`,
+      tables:      `${SRC}/tables`,
+      store:       `${CONTEXT}/src/store`,
+      styled:      `${SRC}/styled`,
+      ts:          `${SRC}/typescript`,
+      algs:        `${SRC}/typescript/algorithms`,
+      webgl:       `${SRC}/webgl`,
+      polyfills:   `${SRC}/polyfills`,
+      resources:   `${CONTEXT}/public/resources`,
+      workers:     `${CONTEXT}/public/workers`,
+      css:         `${CONTEXT}/public/css`,
+      imgs:        `${CONTEXT}/public/imgs`,
+      themes:      `${SRC}/themes`
     }
   }
 }
