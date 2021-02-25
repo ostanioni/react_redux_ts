@@ -53,9 +53,9 @@ const htmlPluginOptions = {
   }
 }
 const forkTsPluginOptions = {
-  eslint: {
-    files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
-  },
+  // eslint: {
+  //  files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+  // },
   typescript: {
     diagnosticOptions: {
       semantic: true,

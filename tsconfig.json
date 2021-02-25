@@ -17,12 +17,12 @@
     "isolatedModules": true,
     "newLine": "LF",
     "lib": ["dom", "dom.iterable", "scripthost", "webworker", "esnext"],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "components": ["/src/components"],
-      "themes": ["/themes"],
-      "styles": ["/src/styles"],
-      "store": ["/src/store"]
+      "components/*": ["src/components/*"],
+      "themes/*": ["themes/*"],
+      "styles/*": ["src/styles/*"],
+      "store/*": ["src/store/*"]
     }
   },
   "plugins": [
