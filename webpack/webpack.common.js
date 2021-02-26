@@ -34,6 +34,7 @@ module.exports = {
       resources:   `${SRC}/resources`,
       tables:      `${SRC}/tables`,
       store:       `${SRC}/store`,
+      reducers:    `${SRC}/store/reducers`,
       styled:      `${SRC}/styled`,
       ts:          `${SRC}/typescript`,
       themes:      `${SRC}/themes`,

@@ -1,19 +1,11 @@
-import {createStore} from 'redux'
+// import {createStore} from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from 'reducers/counterSlice'
 
-type Action = {
-  type: string
-  [key:string]:string
-}
-
-function counterReducer(state = { value: 0 }, action:Action) {
-  switch (action.type) {
-    case 'counter/incremented':
-      return { value: state.value + 1 }
-    case 'counter/decremented':
-      return { value: state.value - 1 }
-    default: 
-      return state
+const Store = configureStore({
+  reducer: {
+    counter: counterReducer
   }
-}
-const Store = createStore(counterReducer, { value: 5 })
+})
+
 export default Store

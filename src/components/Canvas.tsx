@@ -52,16 +52,17 @@ function Canvas ( props: Props ) {
   
   const [size, setSize] = useState( {width:500, heigt:300} )
   useEffect(() => { 
-    // document.addEventListener('DOMContentLoaded', setCanvasSize)
-    setCanvasSize()
-    Store.dispatch({type:'counter/incremented'})
+    // setCanvasSize()
+    Store.dispatch( {type:'counter/increment'} )
     setTimeout( ()=>console.log(Store.getState()), 0 )
   } )
   
   let { width, height } = props    
   return (
+    <>
       <CanvasStyled width={width} height={height} />
+      <div>{Store.getState().counter.value}</div>
+    </>
     )
 }
-
 export default Canvas
