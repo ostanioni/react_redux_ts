@@ -1,8 +1,8 @@
 import {createStore} from 'redux'
 
 type Action = {
-  type: string;
-  [key:string]:string;
+  type: string
+  [key:string]:string
 }
 
 function counterReducer(state = { value: 0 }, action:Action) {
@@ -12,8 +12,8 @@ function counterReducer(state = { value: 0 }, action:Action) {
     case 'counter/decremented':
       return { value: state.value - 1 }
     default: 
-    return state
+      return state
   }
 }
-const Store = createStore(counterReducer)
+const Store = createStore(counterReducer, { value: 5 })
 export default Store

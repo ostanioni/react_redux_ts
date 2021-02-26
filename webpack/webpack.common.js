@@ -2,11 +2,11 @@
 /* tslint:disabled */
 
 const path = require('path')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 
 /*_____________CONTEXT_______________ */
 const CONTEXT = path.resolve(__dirname, '../')
-const SRC = path.resolve(__dirname, '../')
+const SRC = path.resolve(__dirname, '../src')
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 /* __________ENTRY__POINT_____________*/
 const $ENTRY = './src/index.ts'
@@ -33,9 +33,10 @@ module.exports = {
       components:  `${SRC}/components`,
       resources:   `${SRC}/resources`,
       tables:      `${SRC}/tables`,
-      store:       `${CONTEXT}/src/store`,
+      store:       `${SRC}/store`,
       styled:      `${SRC}/styled`,
       ts:          `${SRC}/typescript`,
+      themes:      `${SRC}/themes`,
       algs:        `${SRC}/typescript/algorithms`,
       webgl:       `${SRC}/webgl`,
       polyfills:   `${SRC}/polyfills`,
@@ -43,7 +44,6 @@ module.exports = {
       workers:     `${CONTEXT}/public/workers`,
       css:         `${CONTEXT}/public/css`,
       imgs:        `${CONTEXT}/public/imgs`,
-      themes:      `${SRC}/themes`
     }
   }
 }

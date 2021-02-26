@@ -4,7 +4,7 @@
     "module": "esnext",
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "allowJs": false,
+    "allowJs": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -20,9 +20,9 @@
     "baseUrl": "./",
     "paths": {
       "components/*": ["src/components/*"],
+      "store/*": ["src/store/*"],
       "themes/*": ["themes/*"],
-      "styles/*": ["src/styles/*"],
-      "store/*": ["src/store/*"]
+      "styles/*": ["src/styles/*"]      
     }
   },
   "plugins": [
