@@ -6,7 +6,6 @@ import Store from 'store/Store'
 
 import Canvas from 'components/Canvas'
 
-
 const TitleStyled = styled.h1`
   font-size: 1.5em;
   text-align: center;

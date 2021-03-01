@@ -10,6 +10,7 @@ const pageHeight = document.documentElement.scrollHeight
 присутствует вертикальная полоса прокрутки. 
  */
 import React,  { useState, useEffect } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
 import Store from 'store/Store'
 import styled from 'styled-components'
 
@@ -51,6 +52,11 @@ function setCanvasSize ( ) {
 function Canvas ( props: Props ) {
   
   const [size, setSize] = useState( {width:500, heigt:300} )
+  const selectedData = useSelector(state => 
+    {'counter_1': state.counter.value, 'counter_2': state.counter.value},
+    shallowEqual
+  )
+
   useEffect(() => { 
     // setCanvasSize()
     Store.dispatch( {type:'counter/increment'} )
@@ -60,8 +66,7 @@ function Canvas ( props: Props ) {
   let { width, height } = props    
   return (
     <>
-      <CanvasStyled width={width} height={height} />
-      <div>{Store.getState().counter.value}</div>
+      <CanvasStyled width={width} height={height} />      
     </>
     )
 }
