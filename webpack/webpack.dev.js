@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 console.clear()
-console.log('dev-mode starting ...')
+console.log('\x1b[0m\x1b[42m\x1b[30m%s\x1b[0m', 'dev-mode starting ...')
 
 /*_____________CONTEXT_______________ */
 const CONTEXT = path.resolve(__dirname, '../')
@@ -67,11 +67,22 @@ const forkTsPluginOptions = {
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
+    server: 'http',
+    bonjour: false,
+    compress: false,
+    allowedHosts: 'all',
     historyApiFallback: true,
-    contentBase: './dist',
+    // contentBase: './dist',
     hot: true,
     host: '127.0.0.7',
-    port: 3001
+    port: 3001,
+    open: true,
+    client: {
+      logging: 'info',
+      overlay: true,
+      progress: true,
+      reconnect: true,
+    },
   },
   devtool: 'cheap-module-source-map', // 'source-map',
   module: {
