@@ -1,15 +1,16 @@
 import React from 'react'
-import styled from "styled-components"
-
+import styled, {ThemeProvider} from "styled-components"
+import GlobalStyle from "styled/GlobalStyle"
 import { Provider } from 'react-redux'
-import { store } from './store'
+import { Store } from "store"
+import { theme } from "themes/theme"
 
-import Canvas from 'components/Canvas'
+// import Canvas from 'components/Canvas'
 
 const TitleStyled = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+  font-size: "1.5em";
+  text-align: "center";
+  color: "palevioletred";
 `
 
 const Title = () => { 
@@ -21,15 +22,17 @@ const propsForCanvas = {
   height: "300",
 }
 const App = () => {
-  console.log( store.getState() )
+  console.log( Store.getState() )
   return (
-   <Provider store={store}>
-    <>
-      <Title />
-      <Canvas {...propsForCanvas}/>
-    </>
-   </Provider>
+    <Provider store={Store}>
+      <ThemeProvider theme={theme}>
+      <GlobalStyle />
+        <Title />
+      </ThemeProvider>
+    </Provider>
   )
 }
 
 export default App
+
+// <Canvas {...propsForCanvas}/>

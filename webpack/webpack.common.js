@@ -37,7 +37,7 @@ module.exports = {
       reducers:    `${SRC}/store/reducers`,
       styled:      `${SRC}/styled`,
       ts:          `${SRC}/typescript`,
-      themes:      `${SRC}/themes`,
+      themes:      `${SRC}/styled/themes`,
       algs:        `${SRC}/typescript/algorithms`,
       webgl:       `${SRC}/webgl`,
       polyfills:   `${SRC}/polyfills`,

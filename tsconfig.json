@@ -19,14 +19,16 @@
     "lib": ["dom", "dom.iterable", "scripthost", "webworker", "esnext"],
     "baseUrl": "./",
     "typeRoots": [
-      "node_modules", "styled"
+      "node_modules/**/*", "styled"
     ],
     "paths": {
       "components/*": ["src/components/*"],
       "store/*": ["src/store/*"],
+      "store": ["src/store"],
       "reducers/*": ["src/store/reducers/*"],
-      "themes/*": ["themes/*"],
-      "styles/*": ["src/styles/*"]      
+      "themes/*": ["src/styled/themes/*"],
+      "styles/*": ["src/styles/*"],
+      "styled/*": ["src/styled/*"],
     }
   },
   "plugins": [
