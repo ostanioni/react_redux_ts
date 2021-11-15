@@ -1,3 +1,5 @@
+let x = 5;
+export {x};
 /* Для получения размера веб-страницы используйте следующее 
 (включает в себя внутренние отступы страницы, 
   но не включает границы, внешние отступы и полосы прокрутки):
@@ -9,9 +11,10 @@ const pageHeight = document.documentElement.scrollHeight
 Если pageHeight больше, чем внутренняя высота окна, значит,
 присутствует вертикальная полоса прокрутки. 
  */
+/*
 import React,  { useState, useEffect } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
-import Store from 'store/Store'
+import { store } from 'store'
 import styled from 'styled-components'
 
 const CanvasStyled = styled.canvas.attrs({
@@ -71,3 +74,4 @@ function Canvas ( props: Props ) {
     )
 }
 export default Canvas
+*/

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 
 import { Provider } from 'react-redux'
-import Store from 'store/Store'
+import { store } from './store'
 
 import Canvas from 'components/Canvas'
 
@@ -21,9 +21,9 @@ const propsForCanvas = {
   height: "300",
 }
 const App = () => {
-  console.log( Store.getState() )
+  console.log( store.getState() )
   return (
-   <Provider store={Store}>
+   <Provider store={store}>
     <>
       <Title />
       <Canvas {...propsForCanvas}/>

@@ -18,6 +18,9 @@
     "newLine": "LF",
     "lib": ["dom", "dom.iterable", "scripthost", "webworker", "esnext"],
     "baseUrl": "./",
+    "typeRoots": [
+      "node_modules", "styled"
+    ],
     "paths": {
       "components/*": ["src/components/*"],
       "store/*": ["src/store/*"],
