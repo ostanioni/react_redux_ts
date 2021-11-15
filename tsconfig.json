@@ -22,11 +22,10 @@
       "node_modules/**/*", "styled"
     ],
     "paths": {
-      "components/*": ["src/components/*"],
-      "store/*": ["src/store/*"],
       "store": ["src/store"],
-      "reducers/*": ["src/store/reducers/*"],
-      "themes/*": ["src/styled/themes/*"],
+      "slices/*": ["src/store/slices"],
+      "theme": ["src/theme"],
+      "components/*": ["src/components/*"],
       "styles/*": ["src/styles/*"],
       "styled/*": ["src/styled/*"],
     }

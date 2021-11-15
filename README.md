@@ -1,10 +1,10 @@
 # Typescript React+Redux+StyledComponents playground
 
-- React 17.01
-- React-router 5.2.0
-- Redux 4.0.5
-- Styled-components 5.2.1
-- Typescript 4.2.2
+- React 17.02
+- React-router 6.0.2
+- ReduxToolkit 1.6.2
+- Styled-components 5.3.3
+- Typescript 4.4.4
 
 # Available Scripts:
 

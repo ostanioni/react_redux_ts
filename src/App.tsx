@@ -2,8 +2,8 @@ import React from 'react'
 import styled, {ThemeProvider} from "styled-components"
 import GlobalStyle from "styled/GlobalStyle"
 import { Provider } from 'react-redux'
-import { Store } from "store"
-import { theme } from "themes/theme"
+import { store } from "store"
+import { theme } from "theme"
 
 // import Canvas from 'components/Canvas'
 
@@ -22,11 +22,11 @@ const propsForCanvas = {
   height: "300",
 }
 const App = () => {
-  console.log( Store.getState() )
+  console.log( store.getState() )
   return (
-    <Provider store={Store}>
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
-      <GlobalStyle />
+        <GlobalStyle />
         <Title />
       </ThemeProvider>
     </Provider>
