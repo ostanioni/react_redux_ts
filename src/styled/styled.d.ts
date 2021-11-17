@@ -7,6 +7,7 @@ declare module 'styled-components' {
     borderRadius: string;
     bgColor: string;
     textColor: string;
+    selectBorderColor: string;
 
     colors: {
       main: string;

@@ -4,8 +4,14 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: Monospace, 'Roboto', 'Times New Roman', sans-serif;
   }
+  
   * {
-    box-sizing: border-box;
+      box-sizing: border-box;
+      & ::after, ::before {
+        box-sizing: border-box;
+      }
+    
+
     & * {
           transition: color 0.5s;
           transition: background-color 0.5s;
