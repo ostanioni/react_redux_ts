@@ -6,9 +6,11 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
-    & * {transition: color 0.5s;
-        transition: background-color 0.5s;
-    }
+    & * {
+          transition: color 0.5s;
+          transition: background-color 0.5s;
+        }
+    
    /* transition: background-color, color 0.1s;*/
   }
   body {
@@ -29,13 +31,7 @@ const GlobalStyle = createGlobalStyle`
   svg {
   filter: blur(0.04rem);}
   */
-  .fade-enter {
-    opacity: 0;
-  }
-  .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 250ms ease-in;
-  }
+  
   @media (max-width: 576px) {
     html {
       font-size: 13px;
