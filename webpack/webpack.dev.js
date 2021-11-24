@@ -31,7 +31,10 @@ const TSX = {
   exclude: /node_modules/,
   options: {
     // disable type checker - we will use it in fork plugin
-    transpileOnly: true
+    transpileOnly: true,
+    // getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+    getCustomTransformers: path.join(__dirname, './webpack.ts-transformers.js')
+
   }
 }
 /*________PLUGIN_OPTIONS_____________*/

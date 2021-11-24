@@ -4,6 +4,10 @@
 const path = require('path')
 // const webpack = require('webpack')
 
+// typescript-plugin-styled-components
+// const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+// const styledComponentsTransformer = createStyledComponentsTransformer();
+
 /*_____________CONTEXT_______________ */
 const CONTEXT = path.resolve(__dirname, '../')
 const SRC = path.resolve(__dirname, '../src')

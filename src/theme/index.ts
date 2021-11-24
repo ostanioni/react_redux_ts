@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components'
 
 export const theme: DefaultTheme = {
   borderRadius: '5px',
-  bgColor: 'red',
+  bgColor: 'white',
   textColor: 'white',
   selectBorderColor: 'black',
 

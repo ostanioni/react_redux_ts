@@ -23,12 +23,12 @@ const CanvasStyled = styled.canvas.attrs( props => ({
 }))`
   width: ${props=>props.width};
   height: ${props=>props.width};
-  background:yellowgreen;
+  background:white;
 `
 
 type canvasSize = {
-  width : number;
-  height: number;
+  width : string;
+  height: string;
 }
 
 function setCanvasSize ( ) {

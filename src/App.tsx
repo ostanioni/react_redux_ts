@@ -9,6 +9,7 @@ import BackToTop from "components/global/BackToTop"
 import { Select } from "components/custom/select"
 
 
+
 // import Canvas from 'components/Canvas'
 /* const DivStyled = styled.div`
   font-size: "1.5em";
@@ -33,13 +34,13 @@ const Title = () => {
 }
 
 type sizeOfCanvas = {
-  width : number;
-  height: number;
+  width : string;
+  height: string;
 }
 
 const propsForCanvas:sizeOfCanvas = {
-  width: 1500,
-  height: 300,
+  width: "210mm",
+  height: "297mm",
 }
 
 const App = () => {
